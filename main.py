@@ -109,21 +109,21 @@ def populate_gear(Item_DB):
     steel_gloves = Gear("Steel Gloves", "A durable pair of gloves for protection.", "Gloves", Item_DB.get_item("Steel Gloves"), GearStats(defense=3, strength=3, hitpoints=3, attack=6))
 
     gear.update({
-        "Bronze Helmet": bronze_helmet,
-        "Iron Helmet": iron_helmet,
-        "Steel Helmet": steel_helmet,
-        "Bronze Platebody": bronze_platebody,
-        "Iron Platebody": iron_platebody,
-        "Steel Platebody": steel_platebody,
-        "Bronze Platelegs": bronze_platelegs,
-        "Iron Platelegs": iron_platelegs,
-        "Steel Platelegs": steel_platelegs,
-        "Bronze Boots": bronze_boots,
-        "Iron Boots": iron_boots,
-        "Steel Boots": steel_boots,
-        "Bronze Gloves": bronze_gloves,
-        "Iron Gloves": iron_gloves,
-        "Steel Gloves": steel_gloves,
+        Item_DB.get_item("Bronze Helmet").item_id: bronze_helmet,
+        Item_DB.get_item("Iron Helmet").item_id: iron_helmet,
+        Item_DB.get_item("Steel Helmet").item_id: steel_helmet,
+        Item_DB.get_item("Bronze Platebody").item_id: bronze_platebody,
+        Item_DB.get_item("Iron Platebody").item_id: iron_platebody,
+        Item_DB.get_item("Steel Platebody").item_id: steel_platebody,
+        Item_DB.get_item("Bronze Platelegs").item_id: bronze_platelegs,
+        Item_DB.get_item("Iron Platelegs").item_id: iron_platelegs,
+        Item_DB.get_item("Steel Platelegs").item_id: steel_platelegs,
+        Item_DB.get_item("Bronze Boots").item_id: bronze_boots,
+        Item_DB.get_item("Iron Boots").item_id: iron_boots,
+        Item_DB.get_item("Steel Boots").item_id: steel_boots,
+        Item_DB.get_item("Bronze Gloves").item_id: bronze_gloves,
+        Item_DB.get_item("Iron Gloves").item_id: iron_gloves,
+        Item_DB.get_item("Steel Gloves").item_id: steel_gloves,
     })
     return gear
 
