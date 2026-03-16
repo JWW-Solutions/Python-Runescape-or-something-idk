@@ -62,7 +62,8 @@ class Gear:
         self.slot = None
         return True
 
-
+# This class represents a gear slot on the player, such as "Head", "Body", "Legs", etc. 
+# It manages equipping and unequipping gear in that slot.
 class GearSlot:
     def __init__(self, slot_name: str, equipped_gear: Gear = None, id: int = None):
         self.slot_name = _normalize_slot_name(slot_name)
@@ -82,9 +83,7 @@ class GearSlot:
             return self.equipped_gear.unequip(player)
         return False
 
-
 GearSlots = dict[str, GearSlot]
-
 
 class GearStats:
     def __init__(
@@ -145,13 +144,13 @@ class GearStats:
         self.ranged += additional_stats.ranged
         self.prayer += additional_stats.prayer
         self.hitpoints += additional_stats.hitpoints
-        self.attack_multiplier *= additional_stats.attack_multiplier
-        self.defense_multiplier *= additional_stats.defense_multiplier
-        self.strength_multiplier *= additional_stats.strength_multiplier
-        self.magic_multiplier *= additional_stats.magic_multiplier
-        self.ranged_multiplier *= additional_stats.ranged_multiplier
-        self.prayer_multiplier *= additional_stats.prayer_multiplier
-        self.hitpoints_multiplier *= additional_stats.hitpoints_multiplier
+        self.attack_multiplier += (additional_stats.attack_multiplier - 1.0)
+        self.defense_multiplier += (additional_stats.defense_multiplier - 1.0)
+        self.strength_multiplier += (additional_stats.strength_multiplier - 1.0)
+        self.magic_multiplier += (additional_stats.magic_multiplier - 1.0)
+        self.ranged_multiplier += (additional_stats.ranged_multiplier - 1.0)
+        self.prayer_multiplier += (additional_stats.prayer_multiplier - 1.0)
+        self.hitpoints_multiplier += (additional_stats.hitpoints_multiplier - 1.0)
 
     def __str__(self):
         stats_str = ", ".join(f"{stat}: {bonus}" for stat, bonus in self.items() if bonus != 0)

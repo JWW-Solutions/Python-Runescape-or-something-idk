@@ -15,10 +15,13 @@ def main():
 
     player.add_skills(skills)
 
-    player.equip_gear(gear["Bronze Helmet"], "head")
-    player.equip_gear(gear["Bronze Platebody"], "body")
-    player.equip_gear(gear["Bronze Platelegs"], "legs")
-    player.equip_gear(gear["Bronze Boots"], "boots")
+    player.equip_gear(gear[Item_DB.get_item("Bronze Helmet").item_id], "head")
+
+    player.equip_gear(gear[Item_DB.get_item("Steel Platebody").item_id], "body")
+    player.equip_gear(gear[Item_DB.get_item("Steel Platelegs").item_id], "legs")
+    player.equip_gear(gear[Item_DB.get_item("Steel Boots").item_id], "boots")
+    player.equip_gear(gear[Item_DB.get_item("Steel Gloves").item_id], "gloves")
+
 def populate_db():
     Item_DB = ItemDB()
     Item_DB.add_sub_categories(2, ["Logs", "Axes", "Misc", "Gear", "Consumables"])
@@ -77,36 +80,57 @@ def populate_skills():
     woodcutting = Skill("Woodcutting", 1)
     fire_making = Skill("Firemaking", 1)
     mining = Skill("Mining", 1)
+    hitpoints = Skill("Hitpoints", 10)
 
-    skills.extend([woodcutting, fire_making, mining])
+    skills.extend([woodcutting, fire_making, mining, hitpoints])
     return skills
 
 def populate_gear(Item_DB):
     gear = {}
     # Head
-    bronze_helmet = Gear("Bronze Helmet", "A basic helmet for protection.", "Head", Item_DB.get_item("Bronze Helmet"), GearStats(defense=1))
-    iron_helmet = Gear("Iron Helmet", "A stronger helmet for protection.", "Head", Item_DB.get_item("Iron Helmet"), GearStats(defense=2))
-    steel_helmet = Gear("Steel Helmet", "A durable helmet for protection.", "Head", Item_DB.get_item("Steel Helmet"), GearStats(defense=3))
+    bronze_helmet = Gear("Bronze Helmet", "A basic helmet for protection.", "Head", Item_DB.get_item("Bronze Helmet"), GearStats(defense=1, hitpoints=1))
+    iron_helmet = Gear("Iron Helmet", "A stronger helmet for protection.", "Head", Item_DB.get_item("Iron Helmet"), GearStats(defense=2, hitpoints=2))
+    steel_helmet = Gear("Steel Helmet", "A durable helmet for protection.", "Head", Item_DB.get_item("Steel Helmet"), GearStats(defense=3, hitpoints=3, hitpoints_multiplier=1.01))
 
     # Body
-    bronze_platebody = Gear("Bronze Platebody", "A basic platebody for protection.", "Body", Item_DB.get_item("Bronze Platebody"), GearStats(defense=3))
-    iron_platebody = Gear("Iron Platebody", "A stronger platebody for protection.", "Body", Item_DB.get_item("Iron Platebody"), GearStats(defense=5))
-    steel_platebody = Gear("Steel Platebody", "A durable platebody for protection.", "Body", Item_DB.get_item("Steel Platebody"), GearStats(defense=7))
+    bronze_platebody = Gear("Bronze Platebody", "A basic platebody for protection.", "Body", Item_DB.get_item("Bronze Platebody"), GearStats(defense=3, hitpoints=3))
+    iron_platebody = Gear("Iron Platebody", "A stronger platebody for protection.", "Body", Item_DB.get_item("Iron Platebody"), GearStats(defense=5, hitpoints=5))
+    steel_platebody = Gear("Steel Platebody", "A durable platebody for protection.", "Body", Item_DB.get_item("Steel Platebody"), GearStats(defense=7, hitpoints=7, hitpoints_multiplier=1.01))
 
     # Legs
-    bronze_platelegs = Gear("Bronze Platelegs", "A basic pair of platelegs for protection.", "Legs", Item_DB.get_item("Bronze Platelegs"), GearStats(defense=2))
-    iron_platelegs = Gear("Iron Platelegs", "A stronger pair of platelegs for protection.", "Legs", Item_DB.get_item("Iron Platelegs"), GearStats(defense=4))
-    steel_platelegs = Gear("Steel Platelegs", "A durable pair of platelegs for protection.", "Legs", Item_DB.get_item("Steel Platelegs"), GearStats(defense=6))
+    bronze_platelegs = Gear("Bronze Platelegs", "A basic pair of platelegs for protection.", "Legs", Item_DB.get_item("Bronze Platelegs"), GearStats(defense=2, hitpoints=2))
+    iron_platelegs = Gear("Iron Platelegs", "A stronger pair of platelegs for protection.", "Legs", Item_DB.get_item("Iron Platelegs"), GearStats(defense=4, hitpoints=4))
+    steel_platelegs = Gear("Steel Platelegs", "A durable pair of platelegs for protection.", "Legs", Item_DB.get_item("Steel Platelegs"), GearStats(defense=6, hitpoints=6, hitpoints_multiplier=1.01))
 
     # Boots
-    bronze_boots = Gear("Bronze Boots", "A basic pair of boots for protection.", "Boots", Item_DB.get_item("Bronze Boots"), GearStats(defense=1, strength=2, hitpoints=1))
-    iron_boots = Gear("Iron Boots", "A stronger pair of boots for protection.", "Boots", Item_DB.get_item("Iron Boots"), GearStats(defense=2, strength=4, hitpoints=2))
-    steel_boots = Gear("Steel Boots", "A durable pair of boots for protection.", "Boots", Item_DB.get_item("Steel Boots"), GearStats(defense=3, strength=6, hitpoints=3))
+    bronze_boots = Gear("Bronze Boots", "A basic pair of boots for protection.", "Boots", Item_DB.get_item("Bronze Boots"), GearStats(defense=1, 
+                                                                                                                                      strength=2, 
+                                                                                                                                      hitpoints=1))
+    iron_boots = Gear("Iron Boots", "A stronger pair of boots for protection.", "Boots", Item_DB.get_item("Iron Boots"), GearStats(defense=2, 
+                                                                                                                                   strength=4, 
+                                                                                                                                   hitpoints=2))
+    steel_boots = Gear("Steel Boots", "A durable pair of boots for protection.", "Boots", Item_DB.get_item("Steel Boots"), GearStats(defense=3, 
+                                                                                                                                     strength=6, 
+                                                                                                                                     hitpoints=3))
 
     # Gloves
-    bronze_gloves = Gear("Bronze Gloves", "A basic pair of gloves for protection.", "Gloves", Item_DB.get_item("Bronze Gloves"), GearStats(defense=1, strength=1, hitpoints=1, attack=2))
-    iron_gloves = Gear("Iron Gloves", "A stronger pair of gloves for protection.", "Gloves", Item_DB.get_item("Iron Gloves"), GearStats(defense=2, strength=2, hitpoints=2, attack=4))
-    steel_gloves = Gear("Steel Gloves", "A durable pair of gloves for protection.", "Gloves", Item_DB.get_item("Steel Gloves"), GearStats(defense=3, strength=3, hitpoints=3, attack=6))
+    bronze_gloves = Gear("Bronze Gloves", "A basic pair of gloves for protection.", "Gloves", Item_DB.get_item("Bronze Gloves"), GearStats(defense=1, 
+                                                                                                                                           strength=1, 
+                                                                                                                                           hitpoints=1, 
+                                                                                                                                           attack=2,
+                                                                                                                                           attack_multiplier=1.01))
+    iron_gloves = Gear("Iron Gloves", "A stronger pair of gloves for protection.", "Gloves", Item_DB.get_item("Iron Gloves"), GearStats(defense=2, 
+                                                                                                                                        strength=2, 
+                                                                                                                                        hitpoints=2, 
+                                                                                                                                        attack=4,
+                                                                                                                                        attack_multiplier=1.02))
+    steel_gloves = Gear("Steel Gloves", "A durable pair of gloves for protection.", "Gloves", Item_DB.get_item("Steel Gloves"), GearStats(defense=3, 
+                                                                                                                                          strength=3, 
+                                                                                                                                          hitpoints=3, 
+                                                                                                                                          attack=6, 
+                                                                                                                                          attack_multiplier=1.03, 
+                                                                                                                                          hitpoints_multiplier=1.01,
+                                                                                                                                          strength_multiplier=1.01))
 
     gear.update({
         Item_DB.get_item("Bronze Helmet").item_id: bronze_helmet,
