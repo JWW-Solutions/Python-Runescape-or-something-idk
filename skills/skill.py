@@ -1,3 +1,6 @@
+import random
+
+
 class Skill:
     C = 7.3803
     MAX_LEVEL = 150
@@ -27,7 +30,13 @@ class Skill:
             if xp < xp_required:
                 return level - 1
         return Skill.MAX_LEVEL
-
+    
+    @staticmethod
+    def _roll_success(player_level, required_level, tree):
+        """Roll for success based on player level vs required level."""
+        success_chance = (player_level / (player_level + required_level))
+        return success_chance >= random.random() * (1 + tree.fail_weight)
+    
     def gain_xp(self, xp):
         self.xp += xp
         new_level = Skill.resolve_level(self.xp)

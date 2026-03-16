@@ -32,7 +32,10 @@ class Item:
 
         self.category = category
         self.sub_category = sub_category
-
+    
+    def __str__(self):
+        return f"{self.name} (ID: {self.item_id}, Value: {self.value}, Quantity: {self.quantity})"
+    
     def to_dict(self):
         return {
             "name": self.name,

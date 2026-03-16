@@ -1,7 +1,8 @@
 from skills.skill import Skill
+from skills.woodcutting import Woodcutting, Tree, ChopTree
 from item import ItemDB, Item
 from player.player import Player
-from skills.action import action, nonCombatAction, combatAction
+from skills.action import Action, CombatAction
 from skills.woodcutting import Woodcutting, Tree
 from player.gear import Gear, GearSlot, GearStats
 
@@ -11,8 +12,9 @@ def main():
     gear = populate_gear(Item_DB)
 
     skills = populate_skills()
+    woodcutting = next(s for s in skills if s.name == "Woodcutting")
     player = Player("Jaybiz")
-
+    
     player.add_skills(skills)
 
     player.equip_gear(gear[Item_DB.get_item("Bronze Helmet").item_id], "head")
@@ -22,6 +24,13 @@ def main():
     player.equip_gear(gear[Item_DB.get_item("Steel Boots").item_id], "boots")
     player.equip_gear(gear[Item_DB.get_item("Steel Gloves").item_id], "gloves")
 
+    woodcutting.add_tree(Tree("Normal Tree", 1, 25, Item_DB.get_item("Normal Logs"), max_logs=5, chop_delay=2000, fail_weight=0.1))
+
+    chopTree = ChopTree(woodcutting.get_tree("Normal Tree"), woodcutting)
+
+    while not woodcutting.get_tree("Normal Tree").is_depleted():
+        chopTree.perform_action(player)
+        
 def populate_db():
     Item_DB = ItemDB()
     Item_DB.add_sub_categories(2, ["Logs", "Axes", "Misc", "Gear", "Consumables"])
@@ -77,7 +86,7 @@ def populate_db():
 
 def populate_skills():
     skills = []
-    woodcutting = Skill("Woodcutting", 1)
+    woodcutting = Woodcutting("Woodcutting", 1)
     fire_making = Skill("Firemaking", 1)
     mining = Skill("Mining", 1)
     hitpoints = Skill("Hitpoints", 10)
