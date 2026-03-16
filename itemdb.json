@@ -1,0 +1,272 @@
+{
+    "20000": {
+        "name": "Normal Logs",
+        "description": "Logs from regular trees.",
+        "value": 1,
+        "stackable": true,
+        "category": "Woodcutting",
+        "sub_category": "Logs",
+        "category_id": 2,
+        "sub_category_id": 0
+    },
+    "20001": {
+        "name": "Oak Logs",
+        "description": "Logs from oak trees.",
+        "value": 5,
+        "stackable": true,
+        "category": "Woodcutting",
+        "sub_category": "Logs",
+        "category_id": 2,
+        "sub_category_id": 0
+    },
+    "20002": {
+        "name": "Willow Logs",
+        "description": "Logs from willow trees.",
+        "value": 10,
+        "stackable": true,
+        "category": "Woodcutting",
+        "sub_category": "Logs",
+        "category_id": 2,
+        "sub_category_id": 0
+    },
+    "20003": {
+        "name": "Maple Logs",
+        "description": "Logs from maple trees.",
+        "value": 20,
+        "stackable": true,
+        "category": "Woodcutting",
+        "sub_category": "Logs",
+        "category_id": 2,
+        "sub_category_id": 0
+    },
+    "20004": {
+        "name": "Yew Logs",
+        "description": "Logs from yew trees.",
+        "value": 50,
+        "stackable": true,
+        "category": "Woodcutting",
+        "sub_category": "Logs",
+        "category_id": 2,
+        "sub_category_id": 0
+    },
+    "20005": {
+        "name": "Magic Logs",
+        "description": "Logs from magic trees.",
+        "value": 100,
+        "stackable": true,
+        "category": "Woodcutting",
+        "sub_category": "Logs",
+        "category_id": 2,
+        "sub_category_id": 0
+    },
+    "21000": {
+        "name": "Bronze Axe",
+        "description": "A basic axe for woodcutting.",
+        "value": 10,
+        "stackable": false,
+        "category": "Woodcutting",
+        "sub_category": "Axes",
+        "category_id": 2,
+        "sub_category_id": 1
+    },
+    "21001": {
+        "name": "Iron Axe",
+        "description": "A stronger axe for woodcutting.",
+        "value": 50,
+        "stackable": false,
+        "category": "Woodcutting",
+        "sub_category": "Axes",
+        "category_id": 2,
+        "sub_category_id": 1
+    },
+    "21002": {
+        "name": "Steel Axe",
+        "description": "A durable axe for woodcutting.",
+        "value": 100,
+        "stackable": false,
+        "category": "Woodcutting",
+        "sub_category": "Axes",
+        "category_id": 2,
+        "sub_category_id": 1
+    },
+    "21003": {
+        "name": "Mithril Axe",
+        "description": "A powerful axe for woodcutting.",
+        "value": 200,
+        "stackable": false,
+        "category": "Woodcutting",
+        "sub_category": "Axes",
+        "category_id": 2,
+        "sub_category_id": 1
+    },
+    "21004": {
+        "name": "Adamant Axe",
+        "description": "A strong axe for woodcutting.",
+        "value": 500,
+        "stackable": false,
+        "category": "Woodcutting",
+        "sub_category": "Axes",
+        "category_id": 2,
+        "sub_category_id": 1
+    },
+    "21005": {
+        "name": "Rune Axe",
+        "description": "A top-tier axe for woodcutting.",
+        "value": 1000,
+        "stackable": false,
+        "category": "Woodcutting",
+        "sub_category": "Axes",
+        "category_id": 2,
+        "sub_category_id": 1
+    },
+    "260000": {
+        "name": "Bronze Helmet",
+        "description": "A basic helmet for protection.",
+        "value": 20,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Head",
+        "category_id": 26,
+        "sub_category_id": 0
+    },
+    "260001": {
+        "name": "Iron Helmet",
+        "description": "A stronger helmet for protection.",
+        "value": 100,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Head",
+        "category_id": 26,
+        "sub_category_id": 0
+    },
+    "260002": {
+        "name": "Steel Helmet",
+        "description": "A durable helmet for protection.",
+        "value": 200,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Head",
+        "category_id": 26,
+        "sub_category_id": 0
+    },
+    "261000": {
+        "name": "Bronze Platebody",
+        "description": "A basic platebody for protection.",
+        "value": 30,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Body",
+        "category_id": 26,
+        "sub_category_id": 1
+    },
+    "261001": {
+        "name": "Iron Platebody",
+        "description": "A stronger platebody for protection.",
+        "value": 150,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Body",
+        "category_id": 26,
+        "sub_category_id": 1
+    },
+    "261002": {
+        "name": "Steel Platebody",
+        "description": "A durable platebody for protection.",
+        "value": 300,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Body",
+        "category_id": 26,
+        "sub_category_id": 1
+    },
+    "262000": {
+        "name": "Bronze Platelegs",
+        "description": "A basic pair of platelegs for protection.",
+        "value": 25,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Legs",
+        "category_id": 26,
+        "sub_category_id": 2
+    },
+    "262001": {
+        "name": "Iron Platelegs",
+        "description": "A stronger pair of platelegs for protection.",
+        "value": 125,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Legs",
+        "category_id": 26,
+        "sub_category_id": 2
+    },
+    "262002": {
+        "name": "Steel Platelegs",
+        "description": "A durable pair of platelegs for protection.",
+        "value": 250,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Legs",
+        "category_id": 26,
+        "sub_category_id": 2
+    },
+    "263000": {
+        "name": "Bronze Boots",
+        "description": "A basic pair of boots for protection.",
+        "value": 15,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Boots",
+        "category_id": 26,
+        "sub_category_id": 3
+    },
+    "263001": {
+        "name": "Iron Boots",
+        "description": "A stronger pair of boots for protection.",
+        "value": 75,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Boots",
+        "category_id": 26,
+        "sub_category_id": 3
+    },
+    "263002": {
+        "name": "Steel Boots",
+        "description": "A durable pair of boots for protection.",
+        "value": 150,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Boots",
+        "category_id": 26,
+        "sub_category_id": 3
+    },
+    "264000": {
+        "name": "Bronze Gloves",
+        "description": "A basic pair of gloves for protection.",
+        "value": 10,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Gloves",
+        "category_id": 26,
+        "sub_category_id": 4
+    },
+    "264001": {
+        "name": "Iron Gloves",
+        "description": "A stronger pair of gloves for protection.",
+        "value": 50,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Gloves",
+        "category_id": 26,
+        "sub_category_id": 4
+    },
+    "264002": {
+        "name": "Steel Gloves",
+        "description": "A durable pair of gloves for protection.",
+        "value": 100,
+        "stackable": false,
+        "category": "Armor",
+        "sub_category": "Gloves",
+        "category_id": 26,
+        "sub_category_id": 4
+    }
+}
